@@ -10,4 +10,9 @@ public class ControllerTest {
     public String test1(){
         return "helloGit";
     }
+
+    @RequestMapping("/hello1")
+    public String test11(){
+        return "helloGit";
+    }
 }
