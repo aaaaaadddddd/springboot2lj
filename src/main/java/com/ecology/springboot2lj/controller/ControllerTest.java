@@ -15,4 +15,14 @@ public class ControllerTest {
     public String test11(){
         return "helloGit";
     }
+
+    @RequestMapping("/hello2")
+    public String test12(){
+        return "helloGit";
+    }
+
+    @RequestMapping("/hello3")
+    public String test13(){
+        return "helloGit";
+    }
 }
