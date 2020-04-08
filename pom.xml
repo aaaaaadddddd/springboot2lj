@@ -68,6 +68,13 @@
             <artifactId>druid</artifactId>
             <version>1.0.9</version>
         </dependency>
+
+        <!--配置应用监控actuator-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
