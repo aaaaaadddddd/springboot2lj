@@ -3,6 +3,9 @@ package com.ecology.springboot2lj.controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 测试案例
+ */
 @RestController
 public class ControllerTest {
 
