@@ -13,6 +13,13 @@ spring:
   banner:
     location: banner/banner.txt
 
+  boot:
+    admin:
+      client:
+        url: http://localhost:8080
+  ## application实例名
+  application:
+    name : spring-boot-admin-client
 #  mybatis配置
 mybatis:
   mapper-locations: classpath:/mapper/*Dao.xml
@@ -23,4 +30,6 @@ management:
     web:
       exposure:
         include: "*"
+
+
 
