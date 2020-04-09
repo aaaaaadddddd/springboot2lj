@@ -17,6 +17,10 @@ public class ExcelExportController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 导出user表数据为Excel文件
+     * @param response
+     */
     @GetMapping("/exportExcel")
     public void export(HttpServletResponse response) {
         System.out.println(1);
@@ -24,6 +28,5 @@ public class ExcelExportController {
         List<User> personList = userService.queryAll(null);
         // 导出操作
         ExcelUtiles.exportExcel(personList, "easypoi导出功能", "导出sheet1", User.class, "测试user.xls", response);
-
     }
 }

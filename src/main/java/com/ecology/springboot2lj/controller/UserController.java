@@ -33,11 +33,19 @@ public class UserController {
         return this.userService.queryById(id);
     }
 
+    /**
+     * 查询全部
+     * @return
+     */
     @GetMapping("queryAll")
     public List<User> queryAll() {
         return this.userService.queryAll(null);
     }
 
+    /**
+     * 通过限制条件查询
+     * @return
+     */
     @GetMapping("queryAllByLimit")
     public List<User> queryAllByLimit() {
         return this.userService.queryAllByLimit(1,3);

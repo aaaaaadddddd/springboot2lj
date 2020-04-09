@@ -18,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/excel/import")
 @Slf4j
@@ -26,6 +27,11 @@ public class ExcelImportController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 对excel文件的上传解析 成 数据库表的数据
+     * @param file
+     * @return
+     */
     @PostMapping("/importExcel")
     public String importExcel2(@RequestParam("file") MultipartFile file) {
         ImportParams importParams = new ImportParams();
