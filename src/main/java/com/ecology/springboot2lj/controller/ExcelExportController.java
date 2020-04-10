@@ -1,5 +1,6 @@
 package com.ecology.springboot2lj.controller;
 
+import com.ecology.springboot2lj.annotation.InsertLog;
 import com.ecology.springboot2lj.entity.User;
 import com.ecology.springboot2lj.service.UserService;
 import com.ecology.springboot2lj.utiles.ExcelUtiles;
@@ -21,6 +22,7 @@ public class ExcelExportController {
      * 导出user表数据为Excel文件
      * @param response
      */
+    @InsertLog(logStr = "用户下载了excel")
     @GetMapping("/exportExcel")
     public void export(HttpServletResponse response) {
         System.out.println(1);

@@ -13,7 +13,6 @@ spring:
 ##################配置静态访问资源路径，会导致默认的4个失效，/imgs/自定义的会生效##########
   mvc:
     static-path-pattern: /static/**
-
   ##################改启动的图标springboot为fighting############
   banner:
     location: banner/banner.txt
@@ -34,6 +33,7 @@ management:
     web:
       exposure:
         include: "*"
-
-
-
+#################指定日志的位置##################################
+logging:
+  file:
+    name: luojie.log
