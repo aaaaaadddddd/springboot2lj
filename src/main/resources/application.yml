@@ -3,14 +3,18 @@ server:
   port: 8089
 
 spring:
-##################数据库连接信息###############
+##################数据库连接信息###############################
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-##################改启动的图标springboot为fighting############
+##################配置静态访问资源路径，会导致默认的4个失效，/imgs/自定义的会生效##########
+  mvc:
+    static-path-pattern: /static/**
+
+  ##################改启动的图标springboot为fighting############
   banner:
     location: banner/banner.txt
 ##################配置springboot admin客户端################

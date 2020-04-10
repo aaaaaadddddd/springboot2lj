@@ -14,5 +14,7 @@ public class WebMvcConfig  implements WebMvcConfigurer {
         //需要配置1：----------- 需要告知系统，这是要被当成静态文件的！
         //第一个方法设置访问路径前缀，第二个方法设置资源路径
         registry.addResourceHandler("/imgs/**").addResourceLocations("classpath:/imgs/");
+        //增加了外部静态资源地址
+        registry.addResourceHandler("/custom/**").addResourceLocations("file:E://photos//ipad//DCIM//100APPLE/");
     }
 }
