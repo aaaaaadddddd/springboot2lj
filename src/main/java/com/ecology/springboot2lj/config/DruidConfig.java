@@ -30,8 +30,8 @@ public class DruidConfig {
         FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean();
         filterRegistrationBean.setFilter(new WebStatFilter());
 
-        filterRegistrationBean.addUrlPatterns("/*"); // 所有请求进行监控处理
-        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.css,/druid/*");
+//        filterRegistrationBean.addUrlPatterns("/*"); // 所有请求进行监控处理
+//        filterRegistrationBean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.css,/druid/*");
         return filterRegistrationBean;
     }
 

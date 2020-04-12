@@ -16,5 +16,21 @@ public class WebMvcConfig  implements WebMvcConfigurer {
         registry.addResourceHandler("/imgs/**").addResourceLocations("classpath:/imgs/");
         //增加了外部静态资源地址
         registry.addResourceHandler("/custom/**").addResourceLocations("file:E://photos//ipad//DCIM//100APPLE/");
+
+        //增加对Swagger2静态资源的放行
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
+
+        registry.addResourceHandler("swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        //对bootstrap资源文件的放行
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/resources/");
+
+
     }
 }

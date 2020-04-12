@@ -24,6 +24,14 @@ spring:
 ##################application实例名#########################
   application:
     name : spring-boot-admin-client
+
+################redis集成####################################
+  redis:
+    host: 192.168.137.1
+    port: 6379
+    password: root
+    database: 0
+
 ##################mybatis配置##############################
 mybatis:
   mapper-locations: classpath:/mapper/*Dao.xml
@@ -37,3 +45,6 @@ management:
 logging:
   file:
     name: luojie.log
+
+
+
