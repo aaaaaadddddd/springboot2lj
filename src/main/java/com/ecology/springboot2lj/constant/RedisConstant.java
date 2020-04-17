@@ -6,5 +6,5 @@ package com.ecology.springboot2lj.constant;
 public interface   RedisConstant {
     String TOKEN_PREFIX = "token_%s";
 
-    Integer EXPIRE = 20; //2小时
+    Integer EXPIRE = 50; //2小时
 }

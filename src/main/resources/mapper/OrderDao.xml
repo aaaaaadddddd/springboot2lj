@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ecology.springboot2lj.dao.OrderDao">
+
+    <resultMap type="com.ecology.springboot2lj.entity.Order" id="OrderMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderid" column="orderId" jdbcType="INTEGER"/>
+        <result property="goodid" column="goodId" jdbcType="INTEGER"/>
+        <result property="ordermoney" column="orderMoney" jdbcType="OTHER"/>
+        <result property="receiveraddress" column="receiverAddress" jdbcType="VARCHAR"/>
+        <result property="receivername" column="receiverName" jdbcType="VARCHAR"/>
+        <result property="receiverphone" column="receiverPhone" jdbcType="VARCHAR"/>
+        <result property="paystate" column="payState" jdbcType="VARCHAR"/>
+        <result property="paydate" column="payDate" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="OrderMap">
+        select
+          id, orderId, goodId, orderMoney, receiverAddress, receiverName, receiverPhone, payState, payDate
+        from test.order
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="OrderMap">
+        select
+          id, orderId, goodId, orderMoney, receiverAddress, receiverName, receiverPhone, payState, payDate
+        from test.order
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="OrderMap">
+        select
+          id, orderId, goodId, orderMoney, receiverAddress, receiverName, receiverPhone, payState, payDate
+        from test.order
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="orderid != null">
+                and orderId = #{orderid}
+            </if>
+            <if test="goodid != null">
+                and goodId = #{goodid}
+            </if>
+            <if test="ordermoney != null">
+                and orderMoney = #{ordermoney}
+            </if>
+            <if test="receiveraddress != null and receiveraddress != ''">
+                and receiverAddress = #{receiveraddress}
+            </if>
+            <if test="receivername != null and receivername != ''">
+                and receiverName = #{receivername}
+            </if>
+            <if test="receiverphone != null and receiverphone != ''">
+                and receiverPhone = #{receiverphone}
+            </if>
+            <if test="paystate != null and paystate != ''">
+                and payState = #{paystate}
+            </if>
+            <if test="paydate != null">
+                and payDate = #{paydate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into test.order(orderId, goodId, orderMoney, receiverAddress, receiverName, receiverPhone, payState, payDate)
+        values (#{orderid}, #{goodid}, #{ordermoney}, #{receiveraddress}, #{receivername}, #{receiverphone}, #{paystate}, #{paydate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update test.order
+        <set>
+            <if test="orderid != null">
+                orderId = #{orderid},
+            </if>
+            <if test="goodid != null">
+                goodId = #{goodid},
+            </if>
+            <if test="ordermoney != null">
+                orderMoney = #{ordermoney},
+            </if>
+            <if test="receiveraddress != null and receiveraddress != ''">
+                receiverAddress = #{receiveraddress},
+            </if>
+            <if test="receivername != null and receivername != ''">
+                receiverName = #{receivername},
+            </if>
+            <if test="receiverphone != null and receiverphone != ''">
+                receiverPhone = #{receiverphone},
+            </if>
+            <if test="paystate != null and paystate != ''">
+                payState = #{paystate},
+            </if>
+            <if test="paydate != null">
+                payDate = #{paydate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from test.order where id = #{id}
+    </delete>
+
+</mapper>

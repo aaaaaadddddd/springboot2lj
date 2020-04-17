@@ -1,8 +1,67 @@
 ##################修改端口####################
 server:
-  port: 8089
-
+  port: 8999
+  #ehcache 配置
+  cache:
+    type: ehcache  #指定缓存类型
+    ehcache:
+      config: classpath:ehcache.xml  #加载缓存配置文件
+  # SSL证书相关配置
+  #ssl:
+    # 证书路径
+    #key-store: classpath:keystore.p12
+    # 证书秘钥
+    #key-store-password: 123456
+    # 证书类型
+    #key-store-type: PKCS12
+    # 证书别名
+    #key-alias: tomcat
 spring:
+#  ##工作流activiti配置
+#  activiti:
+#    #自动检查、部署流程定义文件，检查resuorces->processes下是否有流程定义文件，没有则false(默认是true)
+##    check-process-definitions:  true
+#    #自动更新数据库表结构(默认是true)
+#    database-schema-update: true
+#    # 检测身份信息表是否存在
+#    db-identity-used: false
+#    #流程定义文件的存放目录前缀(默认目录是resource下的processes目录,在自定义目录存放的情况下可配置此属性指定)
+#    process-definition-location-prefix: classpath:/processes/
+#    #流程定义文件的存放目录后缀，默认支持**.bpmn20.xml和**.bpmn格式
+#    #process-definition-location-suffixes:
+  #启用devtools并且自动刷新浏览器
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+
+  #HTML配置
+  thymeleaf:
+    # 模板存放路径
+    prefix: classpath:/templates/
+    # 模板后缀
+    suffix: .html
+    # 是否启用
+    enabled: true
+    # 模板编码
+    encoding: UTF-8
+    # 启用缓存，建议生产开启
+    cache: false
+  #文件上传配置
+  servlet:
+    multipart:
+      #是否支持批量上传(默认为true)
+      enabled: true
+      #上传文件的临时目录
+      location: E:\workspace\SpringBootDemo-master\SpringBootDemo-master\springboot2lj\fileUpload
+      #上传文件最大问1M(默认1M，根据自身业务控制即可)
+      max-file-size: 50MB
+      #设置总上传的数据大小10M(默认值10M，根据自身业务控制即可)
+      max-request-size: 100MB
+      #文件大小阈值，当大于这个阈值时将写入到磁盘，否则存在内存中（默认值0 一般情况下不用特意修改）
+      file-size-threshold: 0
 ##################数据库连接信息###############################
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&useSSL=false
@@ -31,7 +90,23 @@ spring:
     port: 6379
     password: root
     database: 0
-
+    #\lettuce连接池配置(也可以使用Jedispool连接池,推荐使用lettuce连接池)
+#    lettuce:
+#      pool:
+#        #连接池中的最大空闲连接
+#        max-idle: 8
+#        #连接池中的最小空闲连接
+#        min-idle: 0
+#        #连接池最大阻塞等待时间（使用负值表示没有限制）
+#        max-wait: -1ms
+#        #连接池最大连接数（使用负值表示没有限制）
+#        max-active: 8
+#  session:
+#    store-type: redis
+#    redis:
+#      flush-mode: on_save
+#      #添加后，redis中的key为spring:session:myproject
+#      namespace: myprojec
 ##################mybatis配置##############################
 mybatis:
   mapper-locations: classpath:/mapper/*Dao.xml
@@ -44,7 +119,9 @@ management:
 #################指定日志的位置##################################
 logging:
   file:
-    name: luojie.log
+    name: E:/workspace/SpringBootDemo-master/SpringBootDemo-master/springboot2ljlog/luojie.log
+#  level:
+#    org.springframework.*: ERROR        #Spring框架中的日志级别
 
 
 

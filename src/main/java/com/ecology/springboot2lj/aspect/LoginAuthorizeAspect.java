@@ -30,21 +30,21 @@ public class LoginAuthorizeAspect {
 
     @Before("verify()")
     public void doVerify(){
-        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        HttpServletRequest request = attributes.getRequest();
-
-        //查询cookie
-        Cookie cookie = CookieUtil.get(request, CookieConstant.TOKEN);
-        if(cookie == null){
-            log.warn("【登陆校验】Cookie中查不到token");
-            throw new SellerAuthorizeException();
-        }
-
-        //从Redis中查询
-        String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,cookie.getValue()));
-        if(StringUtils.isEmpty(tokenValue)){
-            log.warn("【登陆校验】Redis中查不到token");
-            throw new SellerAuthorizeException();
-        }
+//        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+//        HttpServletRequest request = attributes.getRequest();
+//
+//        //查询cookie
+//        Cookie cookie = CookieUtil.get(request, CookieConstant.TOKEN);
+//        if(cookie == null){
+//            log.warn("【登陆校验】Cookie中查不到token");
+//            throw new SellerAuthorizeException();
+//        }
+//
+//        //从Redis中查询
+//        String tokenValue = redisTemplate.opsForValue().get(String.format(RedisConstant.TOKEN_PREFIX,cookie.getValue()));
+//        if(StringUtils.isEmpty(tokenValue)){
+//            log.warn("【登陆校验】Redis中查不到token");
+//            throw new SellerAuthorizeException();
+//        }
     }
 }

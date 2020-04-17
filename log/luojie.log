@@ -1,0 +1,32 @@
+2020-04-14 22:17:08.923  INFO 1152 --- [restartedMain] c.e.s.Springboot2ljApplication           : Starting Springboot2ljApplication on luojie with PID 1152 (E:\workspace\SpringBootDemo-master\SpringBootDemo-master\springboot2lj\target\classes started by 11711 in E:\workspace\SpringBootDemo-master\SpringBootDemo-master\springboot2lj)
+2020-04-14 22:17:08.927  INFO 1152 --- [restartedMain] c.e.s.Springboot2ljApplication           : No active profile set, falling back to default profiles: default
+2020-04-14 22:17:09.058  INFO 1152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-04-14 22:17:09.058  INFO 1152 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-04-14 22:17:10.921  INFO 1152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-04-14 22:17:10.924  INFO 1152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-04-14 22:17:10.962  INFO 1152 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20ms. Found 0 Redis repository interfaces.
+2020-04-14 22:17:11.451  INFO 1152 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-04-14 22:17:12.228  INFO 1152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8888 (http)
+2020-04-14 22:17:12.243  INFO 1152 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-04-14 22:17:12.244  INFO 1152 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.30]
+2020-04-14 22:17:12.394  INFO 1152 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-04-14 22:17:12.394  INFO 1152 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3335 ms
+2020-04-14 22:17:13.355  INFO 1152 --- [restartedMain] o.s.b.a.e.web.ServletEndpointRegistrar   : Registered '/actuator/jolokia' to jolokia-actuator-endpoint
+2020-04-14 22:17:14.409  INFO 1152 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoint(s) beneath base path '/actuator'
+2020-04-14 22:17:14.680  INFO 1152 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-04-14 22:17:14.721  INFO 1152 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-04-14 22:17:14.760  INFO 1152 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-04-14 22:17:14.914  INFO 1152 --- [restartedMain] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService
+2020-04-14 22:17:15.242  INFO 1152 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-04-14 22:17:15.263  INFO 1152 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-04-14 22:17:15.280  INFO 1152 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-04-14 22:17:15.440  INFO 1152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_1
+2020-04-14 22:17:15.443  INFO 1152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: indexUsingGET_2
+2020-04-14 22:17:15.517  INFO 1152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: multiFileuploadUsingPOST_1
+2020-04-14 22:17:15.540  INFO 1152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: selectOneUsingGET_1
+2020-04-14 22:17:15.561  INFO 1152 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: selectOneUsingGET_2
+2020-04-14 22:17:15.621  INFO 1152 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8888 (http) with context path ''
+2020-04-14 22:17:15.626  INFO 1152 --- [restartedMain] c.e.s.Springboot2ljApplication           : Started Springboot2ljApplication in 7.396 seconds (JVM running for 10.848)
+2020-04-14 22:17:17.736  WARN 1152 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=spring-boot-admin-client, managementUrl=http://luojie:8888/actuator, healthUrl=http://luojie:8888/actuator/health, serviceUrl=http://luojie:8888/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused: connect; nested exception is java.net.ConnectException: Connection refused: connect. Further attempts are logged on DEBUG level
+2020-04-14 22:18:43.644  INFO 1152 --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService
+2020-04-14 22:18:43.646  INFO 1152 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

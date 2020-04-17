@@ -599,7 +599,7 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   width: 100%;
 }
 .tpl-login-logo {
-  max-width: 159px;
+  max-width: 196px;
   height: 205px;
   margin: 0 auto;
   margin-bottom: 20px;
@@ -727,6 +727,7 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   padding: 6px 0;
 }
 .theme-white .tpl-login-logo {
+
   background: url(../img/logoa.png) center no-repeat;
 }
 .theme-white .sub-active {
@@ -1338,7 +1339,9 @@ ul.tpl-dropdown-content .tpl-dropdown-menu-messages-item .menu-messages-content 
   padding: 6px 0;
 }
 .theme-black .tpl-login-logo {
-  background: url(../img/logob.png) center no-repeat;
+  border-radius: 31px;
+  background: url(/static/imgs/logo.jpg) center no-repeat;
+  background-size: cover;
 }
 .theme-black .tpl-table-line-img {
   max-width: 100px;
